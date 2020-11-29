@@ -1,0 +1,35 @@
+:root {
+    --color-dark: #222;
+    --color-blue: #3199dc;
+}
+
+*, 
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-dark);
+    height: 200vh;
+}
+
+* {
+    scrollbar-color: var(--color-blue) var(--color-dark);
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+}
