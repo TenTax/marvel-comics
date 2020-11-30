@@ -1,0 +1,36 @@
+.comics__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comics__item {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 250px;
+    background-color: var(--color-light);
+    margin: var(--spacing-medium);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.comics__item:hover {
+    transform: rotate(-2deg);
+}
+
+.comics__name {
+    margin: auto;
+    padding: var(--spacing-small) var(--spacing-medium);
+    color: var(--color-dark);
+}
+
+.comics__img {
+    max-width: 100%;
+    width: 100%;
+}
