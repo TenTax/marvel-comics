@@ -19,7 +19,8 @@
   },
   "homepage": "https://tentax.github.io/marvel-comics/",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^3.2.2"
   },
   "dependencies": {
     "axios": "^0.21.0"

@@ -42,3 +42,10 @@ body {
 ::-webkit-scrollbar-track {
     background-color: var(--color-dark);
 }
+
+:global(.btn) {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
