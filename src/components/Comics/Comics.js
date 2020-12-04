@@ -2,8 +2,10 @@ import { URL_COMICS, STANDARD_XLARGE, IMAGE_NOT_AVAILABLE } from '../../constant
 import { getDataApi } from '../../utils/getDataApi';
 import { ROOT } from '../../constants/root';
 
+import Error from '../Error';
+import Characters from '../Characters';
+
 import classes from './Comics.css';
-import Error from '../Error/Error';
 
 class Comics {
     renderComics(data) {
@@ -16,7 +18,7 @@ class Comics {
                 const uri = URL_COMICS + '/' + id + '/characters';
 
                 htmlContent += `
-                        <li class="comics__item ${classes.comics__item}" data-uri="${uri}">
+                        <li class="comics__item ${classes.comics__item}" data-uri="${uri}" data-title="${title}">
                             <span class="${classes.comics__name}">${title}</span>
                             <img class="${classes.comics__img}" src="${imgSrc}">
                         </li>
@@ -43,8 +45,9 @@ class Comics {
         document.querySelectorAll('.comics__item').forEach(item => {
             item.addEventListener('click', e => {
                 const uri = item.getAttribute('data-uri');
+                const nameComics = item.getAttribute('data-title');
 
-                console.log(e.target)
+                Characters.render(uri, nameComics);
             });
         });
     }
