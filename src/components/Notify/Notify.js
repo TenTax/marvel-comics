@@ -14,7 +14,7 @@ class Notify {
     addNotify(text) {
         const newNotify = document.createElement('div');
         newNotify.classList.add(classes.notify__item);
-        newNotify.textContent = `Comics ${text} not available characters`;
+        newNotify.textContent = `There are no characters in the ${text} comic`;
 
         this.notify.appendChild(newNotify);
 

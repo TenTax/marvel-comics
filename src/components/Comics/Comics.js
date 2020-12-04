@@ -5,6 +5,7 @@ import { ROOT } from '../../constants/root';
 import Error from '../Error';
 import Characters from '../Characters';
 
+import logo from './img/logo.png';
 import classes from './Comics.css';
 
 class Comics {
@@ -27,9 +28,16 @@ class Comics {
         });
 
         const htmlWrapper = `
-                <ul class="${classes.comics__container}">
-                    ${htmlContent}
-                </ul>
+                <div>
+                    <div class="${classes.header}">
+                        <div class="${classes.header__container}">
+                            <img class="${classes.header__logo}" src="${logo.slice(1)}" />
+                        </div>
+                    </div>
+                    <ul class="${classes.comics__container}">
+                        ${htmlContent}
+                    </ul>
+                </div>
             `;
 
         ROOT.innerHTML = htmlWrapper;
