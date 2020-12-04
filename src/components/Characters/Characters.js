@@ -32,7 +32,7 @@ class Charactrs {
                 <div class="${classes.header}">
                     <span class="${classes.header__title}">${nameComics}</span>
                     <button class="header__close ${classes.header__close}">
-                        <img src="${close}" />
+                        <img src="${close.slice(1)}" />
                     </button>
                 </div>
                 <ul class="${classes.characters__list}">
