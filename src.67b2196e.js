@@ -72,7 +72,7 @@ module.exports={error__container:"_error__container_52d64",error__alert:"_error_
 },{"./Error":"dBnP"}],"wCYv":[function(require,module,exports) {
 module.exports={wrapper:"_wrapper_9e896","wrapper-blur":"_wrapper-blur_9e896",wrapper__content:"_wrapper__content_9e896","wrapper__content-fade-up":"_wrapper__content-fade-up_9e896",header:"_header_9e896",header__title:"_header__title_9e896",header__close:"_header__close_9e896",characters__list:"_characters__list_9e896",characters__item:"_characters__item_9e896",characters__img:"_characters__img_9e896",characters__name:"_characters__name_9e896",notify:"_notify_9e896"};
 },{}],"LKHJ":[function(require,module,exports) {
-module.exports="/close.b8ccb7e8.svg";
+module.exports="/close.13128e2e.svg";
 },{}],"OHYl":[function(require,module,exports) {
 module.exports={notify:"_notify_34835",notify__item:"_notify__item_34835"};
 },{}],"Wmr8":[function(require,module,exports) {
@@ -104,4 +104,4 @@ module.exports={preloader__wrapper:"_preloader__wrapper_a0e45",preloader__item:"
 },{"./Preloader":"lJjL"}],"uBxZ":[function(require,module,exports) {
 "use strict";require("regenerator-runtime/runtime");var e=o(require("./components/App")),r=o(require("./components/Characters")),n=o(require("./components/Comics")),t=o(require("./components/Preloader"));function o(e){return e&&e.__esModule?e:{default:e}}function u(e,r,n,t,o,u,i){try{var a=e[u](i),c=a.value}catch(s){return void n(s)}a.done?r(c):Promise.resolve(c).then(t,o)}function i(e){return function(){var r=this,n=arguments;return new Promise(function(t,o){var i=e.apply(r,n);function a(e){u(i,t,o,a,c,"next",e)}function c(e){u(i,t,o,a,c,"throw",e)}a(void 0)})}}i(regeneratorRuntime.mark(function r(){return regeneratorRuntime.wrap(function(r){for(;;)switch(r.prev=r.next){case 0:return t.default.render(),r.next=3,e.default.render();case 3:n.default.eventListener();case 4:case"end":return r.stop()}},r)}))();
 },{"regenerator-runtime/runtime":"QVnC","./components/App":"ToZP","./components/Characters":"Hht8","./components/Comics":"staH","./components/Preloader":"MfOY"}]},{},["uBxZ"], null)
-//# sourceMappingURL=/src.38c1ca31.js.map
+//# sourceMappingURL=/src.67b2196e.js.map
