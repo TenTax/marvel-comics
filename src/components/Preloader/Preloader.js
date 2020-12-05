@@ -8,7 +8,7 @@ class Preloader {
                 <div class="${classes.preloader__item}"></div>
             </div>
         `;
-        
+
         ROOT.innerHTML = htmlWrapper;
     }
 }

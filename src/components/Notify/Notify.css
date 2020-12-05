@@ -1,38 +1,44 @@
 .notify {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom  : 0;
+    left    : 0;
+
+    width  : 100%;
     padding: 20px;
 }
 
 .notify__item {
-    width: 100%;
-    max-width: 300px;
-    padding: 15px;
-    margin-top: 10px;
-    background-color: #000;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    font-size: 12px;
+    font-size  : 12px;
     line-height: 1.4;
-    animation: notify-fade-in-left 0.3s ease forwards;
-    transition: all 0.5s;
+
+    width     : 100%;
+    max-width : 300px;
+    margin-top: 10px;
+    padding   : 15px;
+
+    transition: all .5s;
+    animation : notify-fade-in-left .3s ease forwards;
+
+    color           : #fff;
+    border-radius   : 5px;
+    background-color: #000;
+    box-shadow      : 0 0 15px rgba(0, 0, 0, .5);
 }
 
 :global(.notify__item.hide) {
-    animation: notify-fade-out-left 0.3s ease forwards;
+    animation: notify-fade-out-left .3s ease forwards;
 }
 
 @keyframes notify-fade-in-left {
     from {
         transform: translateX(-50px);
+
         opacity: 0;
     }
 
     to {
         transform: translateX(0);
+
         opacity: 1;
     }
 }
@@ -40,11 +46,13 @@
 @keyframes notify-fade-out-left {
     from {
         transform: translateX(0);
+
         opacity: 1;
     }
 
     to {
         transform: translateX(-50px);
+
         opacity: 0;
     }
 }
