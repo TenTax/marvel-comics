@@ -1,75 +1,72 @@
 import { getDataApi } from '../../utils/getDataApi';
 import { MODAL } from '../../constants/root';
-
-import classes from './Characters.css';
 import { STANDARD_XLARGE } from '../../constants/api';
+import { bodyLock, bodyUnLock } from '../../utils/bodyLock';
 
-import close from './img/close.svg';
 import Notify from '../Notify';
 
-class Charactrs {
+import closeImg from './img/close.svg';
+import classes from './Characters.css';
+
+
+class Characters {
     constructor() {
-        this.wrapper = document.createElement('div');
-        this.wrapper.classList.add(classes.wrapper, 'wrapper');
+        this.modal = document.createElement('div');
+        this.modal.classList.add(classes.modal, 'modal');
     }
 
     renderContent(data, nameComics) {
-        let htmlContent = '';
+        let htmlCharacters = '';
 
         data.forEach(({ name, thumbnail: { path, extension } }) => {
             const pathImg = path + '/' + STANDARD_XLARGE + '.' + extension;
 
-            htmlContent += `
-                <li class="${classes.characters__item}">
-                    <img class="${classes.characters__img}" src="${pathImg}" />
-                    <span class="${classes.characters__name}">${name}</span>
+            htmlCharacters += `
+                <li class="${classes.character}">
+                    <img class="${classes.character__img}" src="${pathImg}" />
+                    <span class="${classes.character__name}">${name}</span>
                 </li>
             `;
         });
 
-        this.wrapper.innerHTML = `
-            <div class="${classes.wrapper__content}">
-                <div class="${classes.header}">
-                    <span class="${classes.header__title}">${nameComics}</span>
-                    <button class="header__close ${classes.header__close}">
-                        <img src="${close.slice(1)}" />
+        this.modal.innerHTML = `
+            <div class="wrapper__content ${classes.modal__wrapper}">
+                <div class="${classes.modal__header}">
+                    <span class="${classes.modal__title}">${nameComics}</span>
+                    <button class="modal__close ${classes.modal__close}">
+                        <img src="${closeImg.slice(1)}" />
                     </button>
                 </div>
-                <ul class="${classes.characters__list}">
-                    ${htmlContent}
+                <ul class="${classes.characters}">
+                    ${htmlCharacters}
                 </ul>
             </div>
         `;
 
-        document.body.classList.add('modal');
-        MODAL.appendChild(this.wrapper);
-
+        bodyLock();
+        MODAL.appendChild(this.modal);
         this.eventListener();
-    }
-
-    renderNotification(nameComics) {
-        Notify.addNotify(nameComics);
     }
 
     async render(uri, nameComics) {
         const data = await getDataApi.getData(uri);
 
-        data.length ? this.renderContent(data, nameComics) : this.renderNotification(nameComics);
+        data.length ? this.renderContent(data, nameComics) : Notify.addNotify(nameComics);
     }
 
     eventListener() {
-        this.wrapper.querySelector('.header__close').addEventListener('click', () => {
-            MODAL.innerHTML = '';
-            document.body.classList.remove('modal');
-        });
+        const closeModal = () => {
+            this.modal.classList.add('hide');
 
-        this.wrapper.addEventListener('click', (e) => {
-            if (e.target.classList.contains('wrapper')) {
+            setTimeout(() => {
                 MODAL.innerHTML = '';
-                document.body.classList.remove('modal');
-            }
-        });
+                this.modal.classList.remove('hide');
+                bodyUnLock();
+            }, 300);
+        }
+
+        this.modal.querySelector('.modal__close').addEventListener('click', closeModal);
     }
 }
 
-export default new Charactrs();
+export default new Characters();
