@@ -17,4 +17,34 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     font-size: 12px;
     line-height: 1.4;
+    animation: notify-fade-in-left 0.3s ease forwards;
+    transition: all 0.5s;
+}
+
+:global(.notify__item.hide) {
+    animation: notify-fade-out-left 0.3s ease forwards;
+}
+
+@keyframes notify-fade-in-left {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes notify-fade-out-left {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
 }

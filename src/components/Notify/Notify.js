@@ -13,14 +13,17 @@ class Notify {
 
     addNotify(text) {
         const newNotify = document.createElement('div');
-        newNotify.classList.add(classes.notify__item);
+        newNotify.classList.add(classes.notify__item, 'notify__item');
         newNotify.textContent = `There are no characters in the ${text} comic`;
 
-        this.notify.appendChild(newNotify);
+        this.notify.insertBefore(newNotify, this.notify.firstChild);
 
         setTimeout(() => {
-            newNotify.remove();
-        }, 3000);
+            newNotify.classList.add('hide');
+            setTimeout(() => {
+                newNotify.remove();
+            }, 300);
+        }, 4000);
     }
 }
 

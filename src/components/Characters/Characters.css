@@ -32,18 +32,19 @@
 @keyframes modal-fade-down {
     from {
         transform: translateY(0);
-        opacity: 1;
+        opacity  : 1;
     }
 
     to {
         transform: translateY(50px);
-        opacity: 0;
+        opacity  : 0;
     }
 }
 
 .modal__wrapper {
     position               : relative;
     padding-top            : 50px;
+    max-width              : 1200px;
     width                  : calc(100vw - 20px);
     height                 : calc(100vh - 20px);
     background-color       : var(--color-light);
